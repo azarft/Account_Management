@@ -5,7 +5,7 @@ public class Main {
         PersonalAccount adik = new PersonalAccount(220104008, "Argen");
         PersonalAccount azar = new PersonalAccount(220104002, "Adilet");
         adik.deposit(400);
-        adik.withdraw(-200);
+        adik.withdraw(-500);
         adik.printTransactionHistory();
     }
 }
