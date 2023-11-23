@@ -43,17 +43,13 @@ public class PersonalAccount {
      * @param amount The amount to be withdrawn.
      */
     public void withdraw(double amount) {
-        try{
-            if (amount < 0 || amount > balance){
-                throw new InsufficientBalanceException("Invalid withdrawal amount or insufficient funds.");
-            }
-            transactions.add(new Amount(amount, "Withdrawal"));
-            balance -= amount;
-            System.out.println("Withdrawn $" + amount);
+        if (amount < 0 || amount > balance){
+            throw new InsufficientBalanceException("Invalid withdrawal amount or insufficient funds.");
         }
-        catch(InsufficientBalanceException ex){
-            System.out.println(ex.getMessage());
-        }
+        transactions.add(new Amount(amount, "Withdrawal"));
+        balance -= amount;
+        System.out.println("Withdrawn $" + amount);
+
     }
 
     /**
