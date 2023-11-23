@@ -5,7 +5,13 @@ public class Main {
         PersonalAccount adik = new PersonalAccount(220104008, "Argen");
         PersonalAccount azar = new PersonalAccount(220104002, "Adilet");
         adik.deposit(400);
-        adik.withdraw(-500);
+        try {
+            adik.withdraw(-500);
+        }
+        catch(InsufficientBalanceException ex){
+            System.out.println(ex.getMessage());
+        }
+        
         adik.printTransactionHistory();
     }
 }
